@@ -1,8 +1,8 @@
 package com.example;
 
-import java.util.List;
+import java.util.Set;
 
 public interface BalancingStrategy {
 
-    Provider next(List<Provider> providers);
+    Provider next(Set<Provider> providers);
 }

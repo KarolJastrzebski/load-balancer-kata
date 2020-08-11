@@ -1,13 +1,13 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class LoadBalancer {
 
     public static final int MAXIMUM_PROVIDERS = 10;
-    private final List<Provider> providers = new ArrayList<>();
+    private final Set<Provider> providers = new HashSet<>();
     private final BalancingStrategy strategy;
 
     public LoadBalancer() {
@@ -32,7 +32,7 @@ public class LoadBalancer {
         providers.add(provider);
     }
 
-    public List<Provider> getProviders() {
+    public Set<Provider> getProviders() {
         return providers;
     }
 

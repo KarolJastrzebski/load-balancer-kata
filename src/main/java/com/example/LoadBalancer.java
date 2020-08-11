@@ -23,10 +23,7 @@ public class LoadBalancer {
         if (providers.size() >= MAXIMUM_PROVIDERS) {
             throw new IllegalStateException("Maximum limit of providers reached");
         }
-        boolean exists = providers.stream()
-            .anyMatch(registeredProvider -> provider.getAddress().equals(registeredProvider.getAddress()));
-
-        if (exists) {
+        if (providers.contains(provider)) {
             throw new IllegalStateException("Duplicate detected");
         }
         providers.add(provider);
